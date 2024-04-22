@@ -1,18 +1,22 @@
+#include "ShoppingCart.h"
+using namespace std;
 
-
-      ShoppingCart();
-      ShoppingCart(string name, string date);
+ShoppingCart::ShoppingCart(){}
       
-      string GetCustomerName() const;
-      string GetDate() const;
+ShoppingCart::ShoppingCart(string name, string date){
+      this->
+}
       
-      void AddItem(ItemToPurchase item);
-      void RemoveItem(string name);
+string GetCustomerName() const;
+string GetDate() const;
       
-      void ModifyItem(ItemToPurchase item);
+void AddItem(ItemToPurchase item);
+void RemoveItem(string name);
       
-      int GetNumItemsInCart();
-      double GetCostOfCart();
+void ModifyItem(ItemToPurchase item);
       
-      void PrintTotal();
-      void PrintDescriptions();
+int GetNumItemsInCart();
+double GetCostOfCart();
+      
+void PrintTotal();
+void PrintDescriptions();
