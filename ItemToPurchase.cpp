@@ -10,6 +10,6 @@ void ItemToPurchase::SetDescription(string description) {
 this->description = description;
 }
 
-string ItemToPurchase::GetDescription() {
+string ItemToPurchase::GetDescription() const {
 return description;
 }
