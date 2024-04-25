@@ -34,6 +34,7 @@ int main() {
 string customerName
 string currentDate;
 ShoppingCart obj1;
+char option;
    
    cout << "Enter customer's name:" << endl;
    getline(cin, customerName);
@@ -44,8 +45,20 @@ ShoppingCart obj1;
    cout << "Customer name: " << customerName << endl;
    cout << "Today's date: " << currentDate << endl;
 
-   PrintMenu();
+   while (option != 'q') {
+        PrintMenu();
    cout << "Choose an option:" << endl;
+
+   if((option != 'a') || (option != 'd') || (option != 'c') || (option != 'i') || (option != 'o')|| (option != 'q')){
+      cout << "Choose options from menu above" << endl;
+   } else {
+      ExecuteMenu(char option, ShoppingCart& theCart);
+   }
+   }
+
+   if(option == 'o'){
+
+   }
    
    return 0;
 }
