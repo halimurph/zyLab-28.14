@@ -79,7 +79,7 @@ void ShoppingCart::PrintTotal() {
       if (cartItems.empty()) {
          cout << "SHOPPING CART IS EMPTY" << endl;
          cout << endl << "Total: $0" << endl;
-         cout << endl;
+         
         return;
       }else{
       for (int i = 0; i < cartItems.size(); ++i) {
