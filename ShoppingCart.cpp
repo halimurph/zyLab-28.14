@@ -1,6 +1,6 @@
 #include "ShoppingCart.h"
 #include <iostream>
-#include <algorithm> // Needed for find_if
+#include <algorithm> 
 
 ShoppingCart::ShoppingCart() : customerName("none"), currentDate("January 1, 2016") {}
 
