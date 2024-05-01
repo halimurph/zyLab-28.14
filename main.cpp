@@ -1,93 +1,30 @@
+//https://github.com/halimurph/zyLab-28.14.git
+//Adrian Huynh
+
 #include <iostream>
-#include <iomanip>
-using namespace std;
- 
+#include <limits>
+#include <vector>
+#include "ItemToPurchase.h"
 #include "ShoppingCart.h"
- 
- 
+
+using namespace std;
+
+void PrintMenu();
+void ExecuteMenu(char option, ShoppingCart& theCart);
 void PrintMenu() {
-   /* Type your code here */
+
+
     cout << "MENU" << endl;
-    cout << "a - Add item to cart" << endl;
-    cout << "d - Remove item from cart" << endl;
-    cout << "c - Change item quantity" << endl;
-    cout << "i - Output items' descriptions" << endl;
-    cout << "o - Output shopping cart" << endl;
-    cout << "q - Quit" << endl;
-    cout << endl;
-  
+    cout   << "a - Add item to cart"  << endl;
+    cout   << "d - Remove item from cart"  << endl;
+    cout   << "c - Change item quantity"  << endl;
+    cout   << "i - Output items' descriptions"  << endl;
+    cout   << "o - Output shopping cart"  << endl;
+    cout   << "q - Quit"  << endl;
+         
+ 
 }
- 
-void ExecuteMenu(char option, ShoppingCart& theCart) {
-    switch(option) {
-        case 'a':
-            {
-                string itemName, itemDescription;
-                int itemPrice, itemQuantity;
-               
-                cout << "ADD ITEM TO CART" << endl;
-                cout << "Enter the item name:";
-                cin.ignore();
-                getline(cin, itemName);
-                cout << endl;
-                cout << "Enter the item description:";
-                getline(cin, itemDescription);
-                cout << endl;
-                cout << "Enter the item price:";
-                cin >> itemPrice;
-                cout << endl;
-                cout << "Enter the item quantity:";
-                cin >> itemQuantity;
-                cout << endl;
-               
-                ItemToPurchase newItem(itemName, itemDescription, itemPrice, itemQuantity);
-                theCart.AddItem(newItem);
-            }
-            break;
-        case 'd':
-            {
-                string itemName;
-                cout << "REMOVE ITEM FROM CART" << endl;
-                cout << "Enter name of item to remove:";
-                cin.ignore();
-                getline(cin, itemName);
-                cout << endl;
-                theCart.RemoveItem(itemName);
-            }
-            break;
-        case 'c':
-            {
-                string itemName;
-                ItemToPurchase modItem;
-                cout << "CHANGE ITEM QUANTITY" << endl;
-                cout << "Enter the item name:";
-                cin.ignore();
-                modItem.SetName(itemName);
-                getline(cin, itemName);
-                modItem.SetName(itemName);
-                cout << endl;
-                theCart.ModifyItem(modItem);
-            }
-            break;
-        case 'i':
-            cout << "OUTPUT ITEMS' DESCRIPTIONS" << endl;
-            theCart.PrintDescriptions();
-            break;
-        case 'o':
-            cout << "OUTPUT SHOPPING CART" << endl;
-            cout << theCart.GetCustomerName() << "'s Shopping Cart - " << theCart.GetDate() << endl;
-            theCart.PrintTotal();
-           
-            break;
-        case 'q':
-            cout << "Exiting program..." << endl;
-            break;
-        default:
-            break;
-    }
-}
- 
- 
+
 int main() {
     string customerName;
     string currentDate;
@@ -180,7 +117,6 @@ void ExecuteMenu(char option, ShoppingCart& theCart) {
             break;
         }
         case 'q':
-            // No action needed, quitting is handled by the loop condition
             break;
         default:
            
